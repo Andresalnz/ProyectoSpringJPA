@@ -1,0 +1,403 @@
+openapi: "3.0.3"
+info:
+  title: "jparestformulaunodemo API"
+  description: "jparestformulaunodemo API"
+  version: "1.0.0"
+servers:
+  - url: "https://jparestformulaunodemo"
+paths:
+  circuit:
+    get:
+      summary: "GET circuit"
+      operationId: "circuitList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST circuit"
+      operationId: "circuitAdd"
+      parameters:
+        - name: "name"
+          in: "query"
+        - name: "city"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  circuit/add:
+    post:
+      summary: "POST circuit/add"
+      operationId: "circuitAdd"
+      responses:
+        200:
+          description: "OK"
+  circuit/detail/{id}:
+    get:
+      summary: "GET circuit/detail/{id}"
+      operationId: "pilotDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  circuit/{id}:
+    put:
+      summary: "PUT circuit/{id}"
+      operationId: "circuitUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE circuit/{id}"
+      operationId: "circuitDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  city:
+    get:
+      summary: "GET city"
+      operationId: "cityList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST city"
+      operationId: "cityAdd"
+      parameters:
+        - name: "name"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  city/add:
+    post:
+      summary: "POST city/add"
+      operationId: "cityAdd"
+      responses:
+        200:
+          description: "OK"
+  city/detail/{id}:
+    get:
+      summary: "GET city/detail/{id}"
+      operationId: "detailCity"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  city/{id}:
+    put:
+      summary: "PUT city/{id}"
+      operationId: "cityUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE city/{id}"
+      operationId: "cityDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  clasification:
+    get:
+      summary: "GET clasification"
+      operationId: "clasification"
+      responses:
+        200:
+          description: "OK"
+  clasification/city/{id}:
+    get:
+      summary: "GET clasification/city/{id}"
+      operationId: "clasificationCityPoints"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  clasification/pilot/{id}:
+    get:
+      summary: "GET clasification/pilot/{id}"
+      operationId: "clasificationPoints"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  download/{name}:
+    get:
+      summary: "GET download/{name}"
+      operationId: "getImage"
+      parameters:
+        - name: "name"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: "OK"
+  images:
+    post:
+      summary: "POST images"
+      operationId: "imageUpload"
+      parameters:
+        - name: "id"
+          in: "query"
+        - name: "name"
+          in: "query"
+        - name: "file"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  login:
+    post:
+      summary: "POST login"
+      operationId: "login"
+      parameters:
+        - name: "username"
+          in: "query"
+        - name: "password"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  logout:
+    get:
+      summary: "GET logout"
+      operationId: "logout"
+      responses:
+        200:
+          description: "OK"
+  pilot:
+    get:
+      summary: "GET pilot"
+      operationId: "pilotList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST pilot"
+      operationId: "pilotAdd"
+      parameters:
+        - name: "name"
+          in: "query"
+        - name: "surname"
+          in: "query"
+        - name: "age"
+          in: "query"
+        - name: "country"
+          in: "query"
+        - name: "championships"
+          in: "query"
+        - name: "podiums"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  pilot/add:
+    post:
+      summary: "POST pilot/add"
+      operationId: "pilotAdd"
+      responses:
+        200:
+          description: "OK"
+  pilot/detail/{id}:
+    get:
+      summary: "GET pilot/detail/{id}"
+      operationId: "pilotDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  pilot/{id}:
+    put:
+      summary: "PUT pilot/{id}"
+      operationId: "pilotUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE pilot/{id}"
+      operationId: "pilotDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  race:
+    get:
+      summary: "GET race"
+      operationId: "raceList"
+      responses:
+        200:
+          description: "OK"
+  race/add:
+    post:
+      summary: "POST race/add"
+      operationId: "raceAdd"
+      responses:
+        200:
+          description: "OK"
+  race/detail/{id}:
+    get:
+      summary: "GET race/detail/{id}"
+      operationId: "raceDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  race/{id}:
+    put:
+      summary: "PUT race/{id}"
+      operationId: "raceUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE race/{id}"
+      operationId: "raceDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  team:
+    get:
+      summary: "GET team"
+      operationId: "listTeam"
+      responses:
+        200:
+          description: "OK"
+  team/add:
+    post:
+      summary: "POST team/add"
+      operationId: "teamAdd"
+      responses:
+        200:
+          description: "OK"
+  team/detail/{id}:
+    get:
+      summary: "GET team/detail/{id}"
+      operationId: "detailTeam"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  team/{id}:
+    put:
+      summary: "PUT team/{id}"
+      operationId: "teamUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE team/{id}"
+      operationId: "teamDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
